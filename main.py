@@ -4,6 +4,7 @@
 import pygame
 from constants import *
 
+
 def main():
     print("Starting Asteroids!")
     print(f"Screen width: {SCREEN_WIDTH}")
