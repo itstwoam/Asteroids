@@ -4,6 +4,7 @@
 import pygame
 from constants import *
 from player import Player
+import asteroidfield
 #import circleshape
 
 def main():
@@ -18,8 +19,16 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    asteroids = pygame.sprite.Group()
+    asteroid_field = pygame.sprit.Group()
+
     Player.containers = (drawable, updateable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+
+    Asteroid.containers = (updateable, drawable, asteroids)
+    Asteroidfield.containers = (updateable)
+    asteroidfield = Asteroidfield()
+    
     while True:
         screen.fill("black")
         for event in pygame.event.get():
