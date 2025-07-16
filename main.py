@@ -18,8 +18,8 @@ def main():
 
     updateable = pygame.sprite.Group()
     drawable = pygame.sprite.Group()
+    Player.containers = (drawable, updateable)
     player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
-    player.containers = (drawable, updateable)
     while True:
         screen.fill("black")
         for event in pygame.event.get():
