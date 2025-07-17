@@ -39,10 +39,16 @@ def main():
                 return
         dt = clock.tick(60)/1000
         updateable_group.update(dt)
+
         for thing in asteroids_group:
             if thing.check_collision(player):
                 print("Game over!")
                 return 0
+            for bullet in shots_group:
+                if bullet.check_collision(thing):
+                    bullet.kill()
+                    thing.kill()
+            
         for thing in drawable_group:
             thing.draw(screen)
         pygame.display.flip()
