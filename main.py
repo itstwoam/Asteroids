@@ -47,7 +47,7 @@ def main():
             for bullet in shots_group:
                 if bullet.check_collision(thing):
                     bullet.kill()
-                    thing.kill()
+                    thing.split()
             
         for thing in drawable_group:
             thing.draw(screen)
